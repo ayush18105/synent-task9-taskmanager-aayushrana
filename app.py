@@ -11,18 +11,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# =========================
-# User Model
-# =========================
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
 
 
-# =========================
-# Task Model
-# =========================
+
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
@@ -32,24 +28,17 @@ class Task(db.Model):
     user_id = db.Column(db.Integer)
 
 
-# =========================
-# Create Database
-# =========================
 with app.app_context():
     db.create_all()
 
 
-# =========================
-# Home
-# =========================
+
 @app.route('/')
 def home():
     return redirect('/login')
 
 
-# =========================
-# Register
-# =========================
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 
@@ -82,9 +71,7 @@ def register():
     return render_template('register.html')
 
 
-# =========================
-# Login
-# =========================
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
@@ -111,9 +98,7 @@ def login():
     return render_template('login.html')
 
 
-# =========================
-# Dashboard
-# =========================
+
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
 
@@ -176,9 +161,7 @@ def dashboard():
     )
 
 
-# =========================
-# Edit Task
-# =========================
+
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
 
@@ -206,9 +189,7 @@ def edit(id):
     )
 
 
-# =========================
-# Delete Task
-# =========================
+
 @app.route('/delete/<int:id>')
 def delete(id):
 
@@ -225,9 +206,7 @@ def delete(id):
     return redirect('/dashboard')
 
 
-# =========================
-# Admin Dashboard
-# =========================
+#
 @app.route('/admin')
 def admin():
 
@@ -255,9 +234,7 @@ def admin():
     )
 
 
-# =========================
-# Profile
-# =========================
+
 @app.route('/profile')
 def profile():
 
@@ -274,9 +251,7 @@ def profile():
     )
 
 
-# =========================
-# Export CSV
-# =========================
+
 @app.route('/export')
 def export():
 
@@ -314,9 +289,7 @@ def export():
     return "tasks.csv exported successfully!"
 
 
-# =========================
-# Logout
-# =========================
+
 @app.route('/logout')
 def logout():
 
@@ -325,8 +298,7 @@ def logout():
     return redirect('/login')
 
 
-# =========================
-# Run App
+
 # =========================
 if __name__ == '__main__':
     app.run(debug=True)
