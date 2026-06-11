@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>My Profile</h1>
+
+<h3>
+Username :
+{{ user.username }}
+</h3>
+
+<br>
+
+<a href="/dashboard">
+Dashboard
+</a>
+
+</div>
+
+</body>
+</html>

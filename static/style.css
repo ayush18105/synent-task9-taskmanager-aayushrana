@@ -1,0 +1,98 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:85%;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h1,h2{
+    text-align:center;
+}
+
+input,
+select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#218838;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+table th{
+    background:#007bff;
+    color:white;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.card{
+    width:30%;
+    background:#f8f9fa;
+    text-align:center;
+    padding:15px;
+    border-radius:8px;
+}
+
+.edit-btn{
+    color:blue;
+    text-decoration:none;
+    margin-right:10px;
+}
+
+.delete-btn{
+    color:red;
+    text-decoration:none;
+}
+
+.logout-btn{
+    text-decoration:none;
+    padding:10px 20px;
+    background:black;
+    color:white;
+    border-radius:5px;
+}
+
+.message{
+    color:red;
+    text-align:center;
+}

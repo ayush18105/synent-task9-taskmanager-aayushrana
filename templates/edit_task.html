@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Edit Task</h2>
+
+    <form method="POST">
+
+        <input type="text"
+               name="title"
+               value="{{ task.title }}"
+               required>
+
+        <select name="priority">
+
+            <option value="{{ task.priority }}">
+                {{ task.priority }}
+            </option>
+
+            <option value="High">High</option>
+
+            <option value="Medium">Medium</option>
+
+            <option value="Low">Low</option>
+
+        </select>
+
+        <input type="date"
+               name="due_date"
+               value="{{ task.due_date }}">
+
+        <select name="status">
+
+            <option value="{{ task.status }}">
+                {{ task.status }}
+            </option>
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Completed">
+                Completed
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Update Task
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
